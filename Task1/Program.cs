@@ -10,12 +10,6 @@ namespace Задача_1__Перестановки_
     {
         static List<string> Reshuffles;
         static string regPattern = @"^\w{1,8}$";
-        static int Fact(int num)
-        {
-            if (num == 1)
-                return 1;
-            return num * Fact(num - 1);
-        }
         static bool CheckReg(string str)
         {
             Regex reg = new Regex(regPattern);
@@ -63,7 +57,7 @@ namespace Задача_1__Перестановки_
         {
             string inpStr;
             InputStr(out inpStr);
-            Reshuffles = new List<string>(Fact(inpStr.Length));
+            Reshuffles = new List<string>();
             char[] stack = GetStack(inpStr);
             GetStack(inpStr);
             GetAllReshuffles("", stack);
